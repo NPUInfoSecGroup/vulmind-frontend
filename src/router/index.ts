@@ -9,6 +9,11 @@ const routes = [
   {
     path: '/scan',
     name: 'Scan',
+    component: () => import('@/pages/TaskListPage.vue'), // 显示扫描页内容
+  },
+  {
+    path: '/scan/:taskName',
+    name: 'Task',
     component: () => import('@/pages/ScannerPage.vue'), // 显示扫描页内容
   },
 ]

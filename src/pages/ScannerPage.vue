@@ -5,7 +5,7 @@
         <div class="header-title">
           <el-page-header @back="goBack" title="返回">
             <template #content>
-              <span class="text-large font-600 mr-3"> 漏洞扫描任务信息 </span>
+              <span class="text-large font-600 mr-3"> {{ taskName }} </span>
             </template>
           </el-page-header>
         </div>
@@ -31,10 +31,13 @@ import ConfigSubView from './Config/ConfigSubView.vue'
 import MessageView from './Scanner/MessageView.vue'
 
 import { useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 
 const router = useRouter()
+const route = useRoute()
+const taskName = route.params.taskName
 const goBack = () => {
-  router.push('/')
+  router.push('/scan')
 }
 </script>
 
