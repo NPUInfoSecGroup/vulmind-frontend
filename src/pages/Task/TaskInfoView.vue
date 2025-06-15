@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 const taskName = '示例任务'
-const creationTime = '2023-10-01 12:00:00'
+const creationTime = '2023-10-01 12:00:001'
 const targetObject = '示例目标对象'
 const taskState = 'failed' // 或 'in-progress', 'failed'
 </script>
