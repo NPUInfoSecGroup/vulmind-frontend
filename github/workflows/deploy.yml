@@ -1,10 +1,9 @@
 name: Deploy Vite App to GitHub Pages
+
 on:
   push:
     branches:
-      - main # 触发部署的分支
-  workflow_dispatch: # 手动触发部署
-# 这是一个 GitHub Actions 工作流，用于将 Vite 应用部署到 GitHub Pages
+      - main # 如果你的默认分支不是 main，请修改这里
 
 jobs:
   build-and-deploy:
@@ -17,20 +16,19 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
-      - name: Build site
-        run: |
-          npm run build
-          cp dist/index.html dist/404.html  # ✅ Vue Router history 模式兼容
+      - name: Build project
+        run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
-          force_orphan: true
+          cname: '' # 可选，若有自定义域名可写入
+
