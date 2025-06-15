@@ -131,14 +131,12 @@ import { reactive } from 'vue'
 
 // do not use same name with ref
 const form = reactive({
+  target: '',
   name: '',
-  region: '',
-  date1: '',
-  date2: '',
-  delivery: false,
-  type: [],
-  resource: '',
+  type: '',
   desc: '',
+  tools: [],
+  suggestions: '',
 })
 
 const toolkit = reactive([

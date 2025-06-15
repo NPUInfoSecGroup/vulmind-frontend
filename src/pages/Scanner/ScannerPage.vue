@@ -1,6 +1,6 @@
 <template>
   <TaskInfoView />
-  <el-tabs v-model="activeName" class="action-tabs" @tab-click="handleClick">
+  <el-tabs v-model="activeName" class="action-tabs">
     <el-tab-pane label="交互式扫描" name="first">
       <EnvironmentInfoView></EnvironmentInfoView>
     </el-tab-pane>
@@ -17,10 +17,6 @@ import DocumentView from './Document/DocumentView.vue'
 import { ref } from 'vue'
 
 const activeName = ref('first')
-
-function handleClick(tab, event) {
-  console.log('Tab clicked:', tab, event)
-}
 </script>
 
 <style scoped>

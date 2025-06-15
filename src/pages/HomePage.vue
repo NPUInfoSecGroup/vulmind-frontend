@@ -45,21 +45,21 @@
     <!-- 主内容区 -->
     <div class="dashboard-content">
       <div class="left-panel">
-        <ScanTarget />
+        <!-- <ScanTarget /> -->
       </div>
 
       <div class="right-panel">
-        <ScanStatus />
-        <VulnerabilityList />
-        <ReportGenerator />
+        <!-- <ScanStatus /> -->
+        <!-- <VulnerabilityList /> -->
+        <!-- <ReportGenerator /> -->
       </div>
     </div>
   </div>
 </template>
 <script lang="ts" setup>
-import ScanTarget from './Home/ScanTarget.vue'
-import ScanStatus from './Home/ScanStatus.vue'
-import ReportGenerator from './Home/ReportGenerator.vue'
+// import ScanTarget from './Home/ScanTarget.vue'
+// import ScanStatus from './Home/ScanStatus.vue'
+// import ReportGenerator from './Home/ReportGenerator.vue'
 </script>
 
 <style scoped>
