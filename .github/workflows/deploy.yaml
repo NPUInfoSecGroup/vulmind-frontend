@@ -2,17 +2,16 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main] # 如用其他分支请改这里
+    branches: [main]
 
 permissions:
-  contents: read
+  contents: write # 关键修复：添加写入权限
   pages: write
   id-token: write
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -20,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # 与本地一致即可
+          node-version: 20
 
       - name: Install deps
         run: npm ci
@@ -32,4 +31,5 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Vite 默认输出目录
+          publish_dir: ./dist
+          publish_branch: gh-pages # 明确指定目标分支
