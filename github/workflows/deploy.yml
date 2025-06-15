@@ -1,9 +1,10 @@
 name: Deploy Vite App to GitHub Pages
-
 on:
   push:
     branches:
-      - main
+      - main # 触发部署的分支
+  workflow_dispatch: # 手动触发部署
+# 这是一个 GitHub Actions 工作流，用于将 Vite 应用部署到 GitHub Pages
 
 jobs:
   build-and-deploy:
