@@ -17,7 +17,7 @@ import TitleBar from './components/TitleBar.vue'
 
 <style scoped>
 .common-layout {
-  height: 95vh; /* 整个页面满屏 */
+  height: 98.1vh; /* 整个页面满屏 */
   display: flex;
   flex-direction: column;
   overflow: hidden; /* 禁止整个页面滚动 */

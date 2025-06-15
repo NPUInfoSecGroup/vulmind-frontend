@@ -12,7 +12,7 @@
         <TaskInfoView />
       </el-header>
       <el-container class="inner-container">
-        <el-aside class="aside" width="40%">
+        <el-aside class="aside">
           <el-scrollbar height="100%">
             <ConfigSubView />
           </el-scrollbar>
@@ -51,12 +51,15 @@ const goBack = () => {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  gap: 10px; /* 设置间距 */
 }
 
 .header {
   height: auto; /* 或你想要的固定高度 */
   flex-shrink: 0;
+  background-color: rgba(255, 255, 255, 0.721);
+  box-shadow: #e6e6e693 0px 0px 16px 6px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e2e8f0; /* 边框样式 */
 }
 
 .inner-container {
@@ -71,19 +74,18 @@ const goBack = () => {
 .aside {
   height: 100%;
   overflow: auto; /* 如果需要 aside 内部滚动 */
-  padding: 20px;
-  padding-top: 0;
-  padding-right: 5px;
+  padding: 10px;
   border-radius: 15px;
-  border: 2px solid #d4d4d493; /* 边框样式 */
+  border: 2px solid #e2e8f0; /* 边框样式 */
   overflow-x: hidden; /* 禁止横向滚动 */
+  min-width: 30%;
 }
 
 .main {
   flex: 1;
   height: 100%;
-  border: 2px solid #d4d4d493; /* 边框样式 */
-  box-shadow: #d4d4d493 0px 0px 10px; /* 阴影效果 */
+  border: 2px solid #e2e8f0; /* 边框样式 */
+  box-shadow: #e2e8f0 0px 0px 10px; /* 阴影效果 */
   border-radius: 1rem;
 }
 

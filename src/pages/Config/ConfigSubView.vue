@@ -41,7 +41,7 @@ const api_key = ref('')
 
 <style scoped>
 .demo-collapse-position {
-  width: 95%;
+  width: 100%;
 }
 
 /* 重点：使用 :deep() 来覆盖 Element Plus 的子组件样式 */
@@ -53,9 +53,9 @@ const api_key = ref('')
 
 :deep(.el-collapse-item__header) {
   background-color: #fefefe !important;
-  border-radius: 15px;
-  padding: 5px;
-  border: 2px solid #ffffff;
+  /* padding: 5px; */
+  border-bottom: 2px solid #e2e8f0;
+  /* box-shadow: #e6e6e693 0px 0px 16px 6px; */
   font-size: 18px;
   font-weight: bold;
 }
@@ -67,7 +67,7 @@ const api_key = ref('')
   /* border: 2px solid #363636; */
   font-size: 18px;
   font-weight: bold;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   margin-bottom: 10px;
 }
 </style>
