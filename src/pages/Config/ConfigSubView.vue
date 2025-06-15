@@ -41,7 +41,7 @@ const api_key = ref('')
 
 <style scoped>
 .demo-collapse-position {
-  width: 100%;
+  width: 95%;
 }
 
 /* 重点：使用 :deep() 来覆盖 Element Plus 的子组件样式 */

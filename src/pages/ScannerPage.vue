@@ -13,7 +13,9 @@
       </el-header>
       <el-container class="inner-container">
         <el-aside class="aside" width="40%">
-          <ConfigSubView />
+          <el-scrollbar height="100%">
+            <ConfigSubView />
+          </el-scrollbar>
         </el-aside>
         <el-main class="main">
           <MessageView />
@@ -60,6 +62,7 @@ const goBack = () => {
   overflow: hidden;
   padding: 20px;
   height: 100%;
+  gap: 10px; /* 设置间距 */
 }
 
 .aside {
@@ -67,6 +70,10 @@ const goBack = () => {
   overflow: auto; /* 如果需要 aside 内部滚动 */
   padding: 20px;
   padding-top: 0;
+  padding-right: 5px;
+  border-radius: 15px;
+  border: 2px solid #d4d4d493; /* 边框样式 */
+  overflow-x: hidden; /* 禁止横向滚动 */
 }
 
 .main {
