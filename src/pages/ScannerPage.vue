@@ -60,6 +60,8 @@ const goBack = () => {
 .aside {
   height: 100%;
   overflow: auto; /* 如果需要 aside 内部滚动 */
+  padding: 20px;
+  padding-top: 0;
 }
 
 .main {
