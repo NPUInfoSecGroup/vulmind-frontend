@@ -3,7 +3,7 @@ name: Deploy Vite App to GitHub Pages
 on:
   push:
     branches:
-      - main # 如果你的主分支不是 main，请改成对应的名字
+      - main # ⬅️ 你在哪个分支开发，就写哪个（一般是 main）
 
 jobs:
   build-and-deploy:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout source
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -24,7 +24,7 @@ jobs:
       - name: Build site
         run: |
           npm run build
-          cp dist/index.html dist/404.html # ✅ 保证 Vue Router history 模式正常工作
+          cp dist/index.html dist/404.html  # ✅ Vue Router history 模式兼容
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
