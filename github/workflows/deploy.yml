@@ -1,35 +1,34 @@
-name: Deploy to GitHub Pages
+name: Deploy Vite App to GitHub Pages
 
 on:
   push:
-    branches: [main] # 如用其他分支请改这里
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches:
+      - main # 如果你的主分支不是 main，请改成对应的名字
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout source
         uses: actions/checkout@v4
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20 # 与本地一致即可
+          node-version: 20
 
-      - name: Install deps
+      - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      - name: Build site
+        run: |
+          npm run build
+          cp dist/index.html dist/404.html # ✅ 保证 Vue Router history 模式正常工作
 
-      - name: Upload to gh-pages
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist # Vite 默认输出目录
+          publish_dir: ./dist
+          publish_branch: gh-pages
