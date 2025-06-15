@@ -9,7 +9,9 @@
     <el-menu-item index="0" @click="goHome">
       <img style="height: 30px" src="@/assets/logo.svg" alt="Element logo" />
     </el-menu-item>
-    <el-menu-item index="1" @click="goScanList">扫描列表</el-menu-item>
+    <el-menu-item index="1" @click="goAddTask">创建任务</el-menu-item>
+    <el-menu-item index="2" @click="goScanList">任务列表</el-menu-item>
+    <el-menu-item index="3" @click="goConfigList">用户配置</el-menu-item>
   </el-menu>
 </template>
 
@@ -26,9 +28,17 @@ const goHome = () => {
   router.push('/')
   activeIndex.value = '0'
 }
+const goAddTask = () => {
+  router.push('/add-task')
+  activeIndex.value = '1'
+}
 const goScanList = () => {
   router.push('/scan')
-  activeIndex.value = '1'
+  activeIndex.value = '2'
+}
+const goConfigList = () => {
+  router.push('/config')
+  activeIndex.value = '3'
 }
 
 const handleSelect = (key: string) => {
@@ -38,4 +48,8 @@ const handleSelect = (key: string) => {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.el-menu--horizontal > .el-menu-item:nth-child(4) {
+  margin-left: auto;
+}
+</style>

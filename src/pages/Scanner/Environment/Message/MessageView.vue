@@ -42,7 +42,7 @@ h1 {
   color: var(--el-color-primary);
 }
 .scanner-box {
-  height: 100%;
+  height: 50vh;
   display: flex;
   flex-direction: column;
 }

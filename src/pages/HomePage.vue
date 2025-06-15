@@ -56,6 +56,11 @@
     </div>
   </div>
 </template>
+<script lang="ts" setup>
+import ScanTarget from './Home/ScanTarget.vue'
+import ScanStatus from './Home/ScanStatus.vue'
+import ReportGenerator from './Home/ReportGenerator.vue'
+</script>
 
 <style scoped>
 /* 全局变量 */

@@ -18,7 +18,17 @@ const routes = [
   {
     path: '/scan/:taskName',
     name: 'Task',
-    component: () => import('@/pages/ScannerPage.vue'), // 显示扫描页内容
+    component: () => import('@/pages/Scanner/ScannerPage.vue'), // 显示扫描页内容
+  },
+  {
+    path: '/config',
+    name: 'Config',
+    component: () => import('@/pages/UserConfigPage.vue'), // 显示扫描页内容
+  },
+  {
+    path: '/add-task',
+    name: 'AddTask',
+    component: () => import('@/pages/TaskAddPage.vue'), // 显示扫描页内容
   },
 ]
 

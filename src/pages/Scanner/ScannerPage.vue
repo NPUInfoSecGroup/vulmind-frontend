@@ -1,51 +1,41 @@
 <template>
-  <div class="common-layout">
-    <el-container class="outer-container">
-      <el-header class="header">
-        <div class="header-title">
-          <el-page-header @back="goBack" title="返回">
-            <template #content>
-              <span class="text-large font-600 mr-3"> {{ taskName }} </span>
-            </template>
-          </el-page-header>
-        </div>
-        <TaskInfoView />
-      </el-header>
-      <el-container class="inner-container">
-        <el-aside class="aside">
-          <el-scrollbar height="100%">
-            <ConfigSubView />
-          </el-scrollbar>
-        </el-aside>
-        <el-main class="main">
-          <MessageView />
-        </el-main>
-      </el-container>
-    </el-container>
-  </div>
+  <TaskInfoView />
+  <el-tabs v-model="activeName" class="action-tabs" @tab-click="handleClick">
+    <el-tab-pane label="交互式扫描" name="first">
+      <EnvironmentInfoView></EnvironmentInfoView>
+    </el-tab-pane>
+    <el-tab-pane label="漏洞扫描报告" name="second">
+      <DocumentView></DocumentView>
+    </el-tab-pane>
+  </el-tabs>
 </template>
 
 <script lang="ts" setup>
 import TaskInfoView from './Task/TaskInfoView.vue'
-import ConfigSubView from './Config/ConfigSubView.vue'
-import MessageView from './Scanner/MessageView.vue'
+import EnvironmentInfoView from './Environment/EnvironmentInfoView.vue'
+import DocumentView from './Document/DocumentView.vue'
+import { ref } from 'vue'
 
-import { useRouter } from 'vue-router'
-import { useRoute } from 'vue-router'
+const activeName = ref('first')
 
-const router = useRouter()
-const route = useRoute()
-const taskName = route.params.taskName
-const goBack = () => {
-  router.push('/scan')
+function handleClick(tab, event) {
+  console.log('Tab clicked:', tab, event)
 }
 </script>
 
 <style scoped>
+.back-button {
+  margin: 20px;
+}
 .common-layout {
   overflow: hidden; /* 禁止滚动 */
+  margin-left: 20px;
+  margin-right: 20px;
 }
-
+.action-tabs {
+  margin: 20px;
+  margin-bottom: 0;
+}
 .outer-container {
   height: 100%;
   display: flex;
@@ -58,7 +48,7 @@ const goBack = () => {
   flex-shrink: 0;
   background-color: rgba(255, 255, 255, 0.721);
   box-shadow: #e6e6e693 0px 0px 16px 6px;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
   border-bottom: 1px solid #e2e8f0; /* 边框样式 */
 }
 

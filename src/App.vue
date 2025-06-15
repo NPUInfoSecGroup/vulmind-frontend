@@ -20,7 +20,6 @@ import TitleBar from './components/TitleBar.vue'
   height: 98.1vh; /* 整个页面满屏 */
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* 禁止整个页面滚动 */
   padding: 0; /* 根据需要设定 */
 }
 
@@ -28,7 +27,6 @@ import TitleBar from './components/TitleBar.vue'
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: 0; /* 根据需要设定 */
 }
 
@@ -39,12 +37,10 @@ import TitleBar from './components/TitleBar.vue'
 
 .main {
   flex: 1;
-  overflow: hidden; /* 关键：禁止 main 区滚动 */
   padding: 0; /* 根据需要设定 */
 }
 
 .router-view {
   height: 100%;
-  overflow: hidden;
 }
 </style>
