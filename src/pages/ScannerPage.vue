@@ -27,8 +27,12 @@
 import TaskInfoView from './Task/TaskInfoView.vue'
 import ConfigSubView from './Config/ConfigSubView.vue'
 import MessageView from './Scanner/MessageView.vue'
+
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 const goBack = () => {
-  console.log('go back')
+  router.push('/')
 }
 </script>
 
@@ -55,6 +59,7 @@ const goBack = () => {
   display: flex;
   overflow: hidden;
   padding: 20px;
+  height: 100%;
 }
 
 .aside {
