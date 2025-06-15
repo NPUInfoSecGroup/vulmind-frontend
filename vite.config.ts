@@ -27,5 +27,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-  base: '/vulmind-frontend/', // ① 对应仓库名，必须带前后斜杠
+  base: './', // ① 对应仓库名，必须带前后斜杠
 })
