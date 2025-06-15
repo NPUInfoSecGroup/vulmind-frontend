@@ -9,8 +9,6 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     ElAside: typeof import('element-plus/es')['ElAside']
-    ElBreadcrumb: typeof import('element-plus/es')['ElBreadcrumb']
-    ElBreadcrumbItem: typeof import('element-plus/es')['ElBreadcrumbItem']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCol: typeof import('element-plus/es')['ElCol']
@@ -24,17 +22,10 @@ declare module 'vue' {
     ElMenuItem: typeof import('element-plus/es')['ElMenuItem']
     ElOption: typeof import('element-plus/es')['ElOption']
     ElPageHeader: typeof import('element-plus/es')['ElPageHeader']
-    ElRadioButton: typeof import('element-plus/es')['ElRadioButton']
-    ElRadioGroup: typeof import('element-plus/es')['ElRadioGroup']
     ElRow: typeof import('element-plus/es')['ElRow']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElSegmented: typeof import('element-plus/es')['ElSegmented']
     ElSelect: typeof import('element-plus/es')['ElSelect']
-    ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
-    ElSwitch: typeof import('element-plus/es')['ElSwitch']
-    ElTabPane: typeof import('element-plus/es')['ElTabPane']
-    ElTabs: typeof import('element-plus/es')['ElTabs']
-    HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     IconCommunity: typeof import('./src/components/icons/IconCommunity.vue')['default']
     IconDocumentation: typeof import('./src/components/icons/IconDocumentation.vue')['default']
     IconEcosystem: typeof import('./src/components/icons/IconEcosystem.vue')['default']
@@ -42,8 +33,6 @@ declare module 'vue' {
     IconTooling: typeof import('./src/components/icons/IconTooling.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    TheWelcome: typeof import('./src/components/TheWelcome.vue')['default']
     TitleBar: typeof import('./src/components/TitleBar.vue')['default']
-    WelcomeItem: typeof import('./src/components/WelcomeItem.vue')['default']
   }
 }
