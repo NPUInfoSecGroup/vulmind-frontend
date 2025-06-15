@@ -67,8 +67,9 @@ const goBack = () => {
 .main {
   flex: 1;
   height: 100%;
-  border: 2px solid #363636; /* 边框样式 */
-  border-radius: 10px;
+  border: 2px solid #d4d4d493; /* 边框样式 */
+  box-shadow: #d4d4d493 0px 0px 10px; /* 阴影效果 */
+  border-radius: 1rem;
 }
 
 .header-title {

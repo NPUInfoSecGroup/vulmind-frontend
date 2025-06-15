@@ -1,12 +1,12 @@
 <template>
   <div class="scanner-box">
-    <h1 class="title">漏洞扫描</h1>
+    <!-- <h1 class="title">漏洞扫描</h1> -->
     <el-scrollbar>
       <p class="message">{{ message }}</p>
     </el-scrollbar>
     <div class="send-bar">
       <el-input v-model="request" placeholder="Please input" />
-      <el-button @click="reciveMessage" :icon="Top" circle />
+      <el-button @click="sendMessage" :icon="Top" circle />
     </div>
   </div>
 </template>
@@ -18,12 +18,18 @@ import { Top } from '@element-plus/icons-vue'
 const message = ref('')
 const request = ref('')
 
-function reciveMessage(get_replay: (msg: string) => string) {
+function sendMessage(get_replay: (msg: string) => string) {
+  message.value = request.value
   message.value = get_replay(request.value)
 }
 </script>
 
 <style scoped>
+h1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
 .scrollbar-demo-item {
   display: flex;
   align-items: center;
@@ -36,11 +42,27 @@ function reciveMessage(get_replay: (msg: string) => string) {
   color: var(--el-color-primary);
 }
 .scanner-box {
-  height: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
+
+.el-scrollbar {
+  flex: 1 1 auto; /* 占满剩余空间 */
+  overflow: auto;
+}
+
 .send-bar {
+  flex-shrink: 0; /* 固定高度 */
   display: flex;
   flex-direction: row;
   gap: 10px;
+  margin-top: 10px;
+  background: white;
+}
+
+.message {
+  word-wrap: break-word;
+  margin-bottom: 10px;
 }
 </style>
