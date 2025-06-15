@@ -1,4 +1,8 @@
-import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
+
+const base = import.meta.env.BASE_URL
+
+console.log('Base URL:', base) // 输出当前的 BASE_URL，便于调试
 
 const routes = [
   {
@@ -19,7 +23,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(), // 使用 HTML5 History 模式
+  history: createWebHistory(base), // 使用 HTML5 History 模式
   routes,
 })
 
